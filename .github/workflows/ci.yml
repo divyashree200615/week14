@@ -9,6 +9,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+
     steps:
       - name: 🛠️ Checkout repository
         uses: actions/checkout@v4
@@ -24,3 +28,4 @@ jobs:
 
       - name: ✅ Run quality checks
         run: npm run check
+
